@@ -10,10 +10,10 @@ function Book(title, author, nPages, readStatus = 'not read yet'){
     };
   }
 
-  function addBookToLibrary(title, author, nPages, readStatus = 'not read yet'){
-    const book = new Book(title, author, nPages, readStatus);
-    myLibrary.push(book);
-  }
+function addBookToLibrary(title, author, nPages, readStatus = 'not read yet'){
+const book = new Book(title, author, nPages, readStatus);
+myLibrary.push(book);
+}
 
 addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295);
 addBookToLibrary('Norwegian Wood', 'Haruki Murakami', 296);

@@ -50,5 +50,6 @@ body {
 
 /* main styling */
 #main {
-    width: 30vw;
+    width: 100%;
+    background-color: var(--bg-color);
 }

@@ -20,6 +20,10 @@ body {
     width: 30vw;
     height: 100vh;
     background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 12px;
 }
 
 #sidebar h1{

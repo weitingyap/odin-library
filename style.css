@@ -23,7 +23,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    padding: 12px;
+    padding: 30px;
+    gap: 20px;
 }
 
 #sidebar h1{
@@ -31,6 +32,7 @@ body {
     font-weight: bold;
     color: var(--font-color);
     text-shadow: 3px 0px 0 var(--accent-color);
+    margin: 0;
 }
 
 #sidebar #add-book-btn {

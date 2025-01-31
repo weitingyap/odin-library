@@ -1,3 +1,14 @@
 body {
-    color: red;
+    display: flex;
+}
+
+/* sidebar styling */
+
+#sidebar {
+    width: 30vw;
+}
+
+/* main styling */
+#main {
+    width: 30vw;
 }

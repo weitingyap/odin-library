@@ -18,6 +18,8 @@ body {
 
 #sidebar {
     width: 30vw;
+    height: 100vh;
+    background-color: var(--primary-color);
 }
 
 #sidebar h1{

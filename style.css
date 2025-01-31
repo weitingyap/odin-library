@@ -1,3 +1,11 @@
+:root {
+    --bg-color: #EAEAEA;
+    --font-color: #4F6D7A;
+    --primary-color: #E8DAB2;
+    --secondary-color: #C0D6DF;
+    --accent-color: #DD6E42;
+}
+
 body {
     display: flex;
 }

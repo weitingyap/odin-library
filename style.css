@@ -25,6 +25,7 @@ body {
 #sidebar h1{
     font-size: 2rem;
     font-weight: bold;
+    color: var(--accent-color);
 }
 
 /* main styling */

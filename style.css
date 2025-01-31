@@ -16,6 +16,11 @@ body {
     width: 30vw;
 }
 
+#sidebar h1{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
 /* main styling */
 #main {
     width: 30vw;

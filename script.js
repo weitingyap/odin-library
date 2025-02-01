@@ -107,6 +107,25 @@ for (const btn of deleteBtns){
 
 addBookBtn = document.querySelector('#add-book-btn');
 addBookDialog = document.querySelector('#add-book-dialog');
+addBookFormBtn = document.querySelector('#add-book-form button[type="submit"]');
+addBookTitle = document.querySelector('#add-book-form input[id="title"]');
+addBookAuthor = document.querySelector('#add-book-form input[id="author"]');
+addBookPages = document.querySelector('#add-book-form input[id="pages"]');
+addBookReadStatus = document.querySelector('#add-book-form select[id="readStatus"]');
 
 // opens add book dialog if button is clicked
 addBookBtn.addEventListener('click', ()=>{addBookDialog.showModal()});
+
+addBookFormBtn.addEventListener('click', (event)=>{
+  event.preventDefault();
+  addBookDialog.close([addBookTitle.value,
+                       addBookAuthor.value,
+                       addBookPages.value,
+                       addBookReadStatus.value]
+  );
+});
+
+addBookDialog.addEventListener('close', (event)=>{
+  title, author, nPages, readStatus = addBookDialog.returnValue;
+  addBookToLibrary(title, author, nPages, readStatus);
+});

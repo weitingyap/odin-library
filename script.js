@@ -56,7 +56,8 @@ for (let book of myLibrary){
   // add delete button to row
   newCell = cell.cloneNode();
   newDeleteBtn = deleteBtn.cloneNode(true);
-  newRow.appendChild(newCell.appendChild(newDeleteBtn));
+  newCell.appendChild(newDeleteBtn);
+  newRow.appendChild(newCell);
 
   // append row
   table.appendChild(newRow);

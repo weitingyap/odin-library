@@ -135,4 +135,5 @@ addBookFormBtn.addEventListener('click', (event)=>{
 addBookDialog.addEventListener('close', (event)=>{
   title, author, nPages, readStatus = addBookDialog.returnValue;
   addBookToLibrary(title, author, nPages, readStatus);
+  displayBook(myLibrary[-1]);
 });

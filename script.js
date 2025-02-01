@@ -93,3 +93,11 @@ function deleteBook (title){
     }
   }
 }
+
+deleteBtns = document.querySelectorAll('.delete-btn');
+for (const btn of deleteBtns){
+  btn.addEventListener('click', (event) => {
+    title = event.target.parentNode.parentNode.firstChild.innerText;
+    deleteBook(title);
+  })
+}

@@ -102,3 +102,11 @@ for (const btn of deleteBtns){
     event.target.parentNode.parentNode.remove(); // remove book row
   })
 }
+
+// add a book
+
+addBookBtn = document.querySelector('#add-book-btn');
+addBookDialog = document.querySelector('#add-book-dialog');
+
+// opens add book dialog if button is clicked
+addBookBtn.addEventListener('click', ()=>{addBookDialog.showModal()});

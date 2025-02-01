@@ -40,7 +40,7 @@ function displayBook(book){
 
   for (let prop in book){
 
-    if (prop != 'info' && prop != 'id'){ // skip over object methods & id
+    if (typeof book[prop] != 'function' && prop != 'id'){ // skip over object methods & id
 
       newCell = cell.cloneNode();
 

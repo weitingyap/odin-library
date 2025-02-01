@@ -137,3 +137,12 @@ form button[type='submit']{
     padding: 12px;
     width: fit-content;
 }
+
+form#add-book-form input{
+    outline: var(--font-color);
+}
+
+form#add-book-form input:active{
+    outline: var(--font-color);
+    box-shadow: 1px 1px 1px darkgray;
+}

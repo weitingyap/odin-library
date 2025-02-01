@@ -85,7 +85,7 @@ for (let check of readChecks){
 // delete book on click 
 
 function deleteBook (title){
-  for (let id = 0; id < myLibrary.length; i++){
+  for (let id = 0; id < myLibrary.length; id++){
     if (myLibrary[id].title === title){
       myLibrary.splice(id, 1);
       return;

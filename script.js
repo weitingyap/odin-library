@@ -85,7 +85,7 @@ for (let check of readChecks){
 
 // delete book on click 
 
-function deleteBook (title){
+function deleteBookFromLibrary (title){
   for (let id = 0; id < myLibrary.length; id++){
     if (myLibrary[id].title === title){
       myLibrary.splice(id, 1);
@@ -98,7 +98,7 @@ deleteBtns = document.querySelectorAll('.delete-btn');
 for (const btn of deleteBtns){
   btn.addEventListener('click', (event) => {
     title = event.target.parentNode.parentNode.firstChild.innerText;
-    deleteBook(title);
+    deleteBookFromLibrary(title);
     event.target.parentNode.parentNode.remove(); // remove book row
   })
 }

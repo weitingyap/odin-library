@@ -76,3 +76,15 @@ th, tr, td {
 #library-books td{
     padding: 6px;
 }
+
+.delete-btn {
+    margin: auto;
+    padding: 12px;
+    border: none;
+    box-sizing: content-box;
+    width: 24px;
+    height: 24px;
+    background-image: url(./assets/trash-icon.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}

@@ -31,8 +31,14 @@ readBtn = document.createElement("input"); // checkbox to toggle read status
 readBtn.setAttribute("type", "checkbox");
 readBtn.classList.add('read-check');
 
+deleteBtn = document.createElement("button"); // button to delete books
+deleteBtn.type = 'button';
+deleteBtn.classList.add('delete-btn');
+
 for (let book of myLibrary){
+
   newRow = row.cloneNode();
+
   for (let prop in book){
     if (prop != 'info' && prop != 'id'){ // skip over object methods & id
       newCell = cell.cloneNode();
@@ -46,6 +52,13 @@ for (let book of myLibrary){
       newRow.appendChild(newCell);
     }
   }
+
+  // add delete button to row
+  newCell = cell.cloneNode();
+  newDeleteBtn = deleteBtn.cloneNode(true);
+  newRow.appendChild(newCell.appendChild(newDeleteBtn));
+
+  // append row
   table.appendChild(newRow);
 }
 

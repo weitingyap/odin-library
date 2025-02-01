@@ -13,6 +13,7 @@ function Book(title, author, nPages, readStatus = 'not read yet'){
 function addBookToLibrary(title, author, nPages, readStatus = 'not read yet'){
     const book = new Book(title, author, nPages, readStatus);
     myLibrary.push(book);
+    book.id = myLibrary.length - 1;
 }
 
 addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295);
@@ -29,7 +30,7 @@ cell = document.createElement("td");
 for (let book of myLibrary){
   newRow = row.cloneNode();
   for (let prop in book){
-    if (typeof book[prop] != 'function'){ // skip over object methods
+    if (prop != 'info' && prop != 'id'){ // skip over object methods & id
       newCell = cell.cloneNode();
       newCell.innerText = book[prop];
       newRow.appendChild(newCell);

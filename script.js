@@ -16,7 +16,7 @@ function addBookToLibrary(title, author, nPages, readStatus = 'not read yet'){
 }
 
 addBookToLibrary('The Hobbit', 'J.R.R. Tolkien', 295);
-addBookToLibrary('Norwegian Wood', 'Haruki Murakami', 296);
+addBookToLibrary('Norwegian Wood', 'Haruki Murakami', 296, 'read');
 addBookToLibrary('1Q84', 'Haruki Murakami', 925);
 addBookToLibrary('The City and Its Uncertain Walls', 'Haruki Murakami', 464);
 
@@ -26,14 +26,44 @@ table = document.querySelector("#library-books tbody");
 row = document.createElement("tr");
 cell = document.createElement("td");
 
+readBtn = document.createElement("input"); // checkbox to toggle read status
+readBtn.setAttribute("type", "checkbox");
+readBtn.classList.add('read-check');
+
 for (let book of myLibrary){
   newRow = row.cloneNode();
   for (let prop in book){
     if (typeof book[prop] != 'function'){ // skip over object methods
       newCell = cell.cloneNode();
-      newCell.innerText = book[prop];
+      if (prop === 'readStatus') {        // insert read status checkbox
+        newReadBtn = readBtn.cloneNode();
+        newReadBtn.checked = book.readStatus === 'read' ? true : false;
+        newCell.appendChild(newReadBtn);
+      } else {                            // remaining text/number based properties
+        newCell.innerText = book[prop];
+      }
       newRow.appendChild(newCell);
     }
   }
   table.appendChild(newRow);
+}
+
+// update book's read status based on checkbox toggle
+
+Book.prototype.updateStatus = function () {
+  this.readStatus = this.readStatus === 'read' ? 'not read yet' : 'read';
+};
+
+readChecks = document.querySelectorAll(".read-check");
+
+for (let check of readChecks){
+  check.addEventListener('change', (event)=>{
+    title = event.target.parentNode.parentNode.firstChild.innerText;
+    for (let book of myLibrary){
+      if (book.title === title) {
+        book.updateStatus();
+        break;
+      }
+    }
+  });
 }

@@ -125,15 +125,16 @@ addBookBtn.addEventListener('click', ()=>{addBookDialog.showModal()});
 
 addBookFormBtn.addEventListener('click', (event)=>{
   event.preventDefault();
-  addBookDialog.close([addBookTitle.value,
-                       addBookAuthor.value,
-                       addBookPages.value,
+  addBookDialog.close([addBookTitle.value + '$' +
+                       addBookAuthor.value + '$' +
+                       addBookPages.value + '$' +
                        addBookReadStatus.value]
   );
 });
 
 addBookDialog.addEventListener('close', (event)=>{
-  title, author, nPages, readStatus = addBookDialog.returnValue;
+  [title, author, nPages, readStatus] = addBookDialog.returnValue.split('$');
+  console.log(title, author, nPages, readStatus);
   addBookToLibrary(title, author, nPages, readStatus);
-  displayBook(myLibrary[-1]);
+  displayBook(myLibrary.at(-1));
 });

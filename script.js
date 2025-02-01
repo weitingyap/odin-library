@@ -35,13 +35,15 @@ deleteBtn = document.createElement("button"); // button to delete books
 deleteBtn.type = 'button';
 deleteBtn.classList.add('delete-btn');
 
-for (let book of myLibrary){
-
+function displayBook(book){
   newRow = row.cloneNode();
 
   for (let prop in book){
+
     if (prop != 'info' && prop != 'id'){ // skip over object methods & id
+
       newCell = cell.cloneNode();
+
       if (prop === 'readStatus') {        // insert read status checkbox
         newReadBtn = readBtn.cloneNode();
         newReadBtn.checked = book.readStatus === 'read' ? true : false;
@@ -49,6 +51,7 @@ for (let book of myLibrary){
       } else {                            // remaining text/number based properties
         newCell.innerText = book[prop];
       }
+      
       newRow.appendChild(newCell);
     }
   }
@@ -61,6 +64,10 @@ for (let book of myLibrary){
 
   // append row
   table.appendChild(newRow);
+}
+
+for (let book of myLibrary){
+  displayBook(book);
 }
 
 // update book's read status based on checkbox toggle

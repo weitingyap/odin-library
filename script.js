@@ -25,7 +25,7 @@ addBookToLibrary('1Q84', 'Haruki Murakami', 925);
 addBookToLibrary('The City and Its Uncertain Walls', 'Haruki Murakami', 464);
 
 // populate table with existing books in library
-
+table = document.querySelector("#library-books tbody");
 row = document.createElement("tr");
 cell = document.createElement("td");
 

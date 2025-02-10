@@ -15,6 +15,7 @@ In particular, I practiced:
 * Javascript DOM manipulation
 * Javascript event handling
 * Javascript form dialog data handling
+* JavaScript object constructors, ES6 classes
 * Git branching for separate features
 
 ## Lessons 

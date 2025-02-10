@@ -1,14 +1,17 @@
 const myLibrary = [];
 
-function Book(title, author, nPages, readStatus = 'not read yet'){
+class Book{
+  constructor(title, author, nPages, readStatus){
     this.title = title; 
     this.author = author;
     this.nPages = nPages;
     this.readStatus = readStatus;
-    this.info = function(){
-      return `${this.title} by ${this.author}, ${this.nPages} pages, ${this.readStatus}`;
-    };
   }
+
+  get info(){
+    return `${this.title} by ${this.author}, ${this.nPages} pages, ${this.readStatus}`;
+  }
+}
 
 function addBookToLibrary(title, author, nPages, readStatus = 'not read yet'){
     const book = new Book(title, author, nPages, readStatus);
@@ -23,7 +26,6 @@ addBookToLibrary('The City and Its Uncertain Walls', 'Haruki Murakami', 464);
 
 // populate table with existing books in library
 
-table = document.querySelector("#library-books tbody");
 row = document.createElement("tr");
 cell = document.createElement("td");
 
